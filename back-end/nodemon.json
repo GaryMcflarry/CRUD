@@ -1,0 +1,6 @@
+{
+    "env": {
+        "MCLI_PRIVATE_API_KEY": "Client_Database",
+        "JWT_KEY": "theChamberOfSecrets"
+    }
+}

@@ -1,0 +1,35 @@
+table {
+    width: 100%;
+}
+
+
+.delBut {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    height: 35px;
+    width: 900px;
+    border-radius: 10px;
+    margin-bottom: 5px;
+}
+
+.divSearchBar {
+    display: flex;
+    justify-content: center;
+    height: 100px;
+}
+
+.mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+
+.menuBut {
+    display: flex;
+    justify-content: right;
+    margin-left: 100%;
+}

@@ -1,0 +1,35 @@
+<!-- <div class="mat-elevation-z8">
+    <h1 class="logoTitle">Client Information</h1>
+</div> -->
+                   
+<button mat-icon-button class="menuBut" [matMenuTriggerFor]="menu" >
+    <mat-icon color="accent">more_vert</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button [routerLink]="'/login'" mat-menu-item class="logoutBut" (click)="userService.deleteKey()">Log Out<mat-icon>exit_to_app</mat-icon></button>
+    <ng-container *ngIf = "userService.getUser()?.admin">
+
+        <button [routerLink]="'/signup'" [hidden]="" mat-menu-item class="logoutBut"  >Add User<mat-icon>person_add</mat-icon></button>
+    </ng-container>
+  </mat-menu>
+
+<router-outlet></router-outlet>
+
+    <mat-tab-group color="accent">
+        <mat-tab label="Clients" class="tabClients">
+            <app-button text= "{{ showAddClient ? 'x' : 'Add Client' }}" (btnClick)="toggleAddClient()"></app-button>
+            <app-add-task (btnClick)="toggleAddClient()"></app-add-task>
+        
+            <app-client></app-client>
+            
+        </mat-tab>
+
+    <ng-container *ngIf = "userService.getUser()?.admin">
+        <mat-tab label="Users" class="tabUsers">
+        <app-user></app-user>
+        </mat-tab>
+    </ng-container>
+        
+    </mat-tab-group>
+   
+    

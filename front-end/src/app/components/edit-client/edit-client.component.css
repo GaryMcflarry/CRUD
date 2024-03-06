@@ -1,0 +1,35 @@
+
+
+.editName {
+    margin: 5px;
+    margin-top: 1%;
+    margin-left: 13%;
+    width: 15%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.editSurname {
+    margin: 5px;
+    margin-left: 2%;
+    width: 18.5%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+
+.editContactNr {
+    margin: 5px;
+    margin-left: 2%;
+    width: 15%;
+    height: 30px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.submitEdit {
+    margin-left: 10px;
+}

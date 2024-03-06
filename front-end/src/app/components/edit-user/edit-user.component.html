@@ -1,0 +1,18 @@
+<div mat-dialog-content>
+    <!-- {{data | json}} -->
+    <p>How would you like to edit {{data.user}}?</p>
+    <mat-form-field appearance="fill" color="warn">
+      <mat-label>Username</mat-label>
+      <input matInput  [(ngModel)]="data.user">
+      <button *ngIf="data.user" matSuffix mat-icon-button aria-label="Clear" (click)="data.user=''">
+        <mat-icon>x</mat-icon>
+      </button>
+    </mat-form-field>
+
+      <mat-slide-toggle class="adminToggle" name="admin" [(ngModel)]="data.admin" [color]="color" >Admin</mat-slide-toggle>
+  
+  
+  
+  
+    <button mat-raised-button color="warn" class="submitEdit"  (click)="editUsers()"><mat-icon>send</mat-icon>Submit</button>
+  </div>

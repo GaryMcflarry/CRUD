@@ -1,0 +1,19 @@
+
+.addClientInput {
+    display: flex;
+    justify-content: center;
+    margin-left: 25%;
+    width: 50%;
+}
+
+
+.divTickxBut {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.tickBut {
+    margin: 10px;
+}
+

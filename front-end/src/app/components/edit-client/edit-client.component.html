@@ -1,0 +1,30 @@
+<div mat-dialog-content>
+  <!-- {{data | json}} -->
+  <p>What would you like to Edit?</p>
+  <mat-form-field appearance="fill">
+    <mat-label>Name</mat-label>
+    <input matInput  [(ngModel)]="data.name">
+    <button *ngIf="data.name" matSuffix mat-icon-button aria-label="Clear" (click)="data.name=''">
+      <mat-icon>x</mat-icon>
+    </button>
+  </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Surname</mat-label>
+      <input matInput [(ngModel)]="data.surname">
+      <button *ngIf="data.surname" matSuffix mat-icon-button aria-label="Clear" (click)="data.surname=''">
+        <mat-icon>x</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Contact</mat-label>
+      <input matInput [(ngModel)]="data.contact">
+      <button *ngIf="data.contact" matSuffix mat-icon-button aria-label="Clear" (click)="data.contact=''">
+        <mat-icon>x</mat-icon>
+      </button>
+
+
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" class="submitEdit"  (click)="editClient()"><mat-icon>send</mat-icon>Submit</button>
+</div>

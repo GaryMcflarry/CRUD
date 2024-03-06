@@ -1,0 +1,53 @@
+<!-- This is the HTML for the form that appears when a user clicks the add button -->
+<form *ngIf="showAddClient" >
+  
+<!--   
+  <ng-container *ngFor="let item of newForm">
+    <mat-form-field class="addClientInput">
+      <mat-label>{{item.title}}</mat-label>
+       <input matInput type="text"  #clientName [name]="item.name" [(ngModel)]="item.value" placeholder="Insert name...">
+          <button *ngIf="item.value" matSuffix mat-icon-button aria-label="Clear" (click)="item.value=''">
+          <mat-icon>x</mat-icon>
+          </button>
+        </mat-form-field>
+  </ng-container>
+
+     -->
+    <mat-form-field class="addClientInput">
+    <mat-label>Name</mat-label>
+     <input matInput type="text" #clientName name="name" [formControl]="clientNameFormControl" [errorStateMatcher]="matcher" [(ngModel)]="newUser.name" placeholder="Insert name...">
+        <button *ngIf="newUser.name" matSuffix mat-icon-button aria-label="Clear" (click)="newUser.name=''">
+        <mat-icon>delete_outline</mat-icon>
+        </button>
+      <mat-error class="errorMessage" *ngIf="clientNameFormControl.hasError('required')">
+        Client name required
+      </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="addClientInput">
+        <mat-label>Surname</mat-label>
+     <input matInput type="text"  #clientSurname name="surname" [formControl]="clientSurnameFormControl" [errorStateMatcher]="matcher" [(ngModel)]="newUser.surname" placeholder="Insert surname...">
+        <button *ngIf="newUser.surname" matSuffix mat-icon-button aria-label="Clear" (click)="newUser.surname=''">
+        <mat-icon>delete_outline</mat-icon>
+        </button>
+        <mat-error class="errorMessage" *ngIf="clientSurnameFormControl.hasError('required')">
+          Surname is required
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field class="addClientInput">
+        <mat-label>Contact</mat-label>
+        <input matInput type="text"  #clientContact name="contact" [formControl]="clientContactFormControl" [errorStateMatcher]="matcher" [(ngModel)]="newUser.contact" placeholder="Insert contact...">
+           <button *ngIf="newUser.contact" matSuffix mat-icon-button aria-label="Clear" (click)="newUser.contact=''">
+           <mat-icon>delete_outline</mat-icon>
+           </button>
+          <mat-error class="errorMessage" *ngIf="clientContactFormControl.hasError('required')">
+            Contact is required
+          </mat-error>
+      </mat-form-field>
+
+    
+        <div class="divTickxBut">
+            <button class="tickBut" (click)="createNewClient()"  mat-raised-button color="primary" [disabled]="newUser.name === '' || newUser.surname === '' || newUser.contact === ''"><mat-icon>send</mat-icon>Submit</button>
+        </div>
+</form>

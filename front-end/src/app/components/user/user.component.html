@@ -1,0 +1,56 @@
+    <!-- Making search bar for searching -->
+    <mat-form-field color="warn" class="searchBar">
+        <mat-label><mat-icon>search</mat-icon></mat-label>
+        <input matInput (keyup)="applyFilter($event)" placeholder="Search Database" #input>
+      </mat-form-field>
+      
+  
+  
+  <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8" > 
+  
+          <!--- Note that these columns can be defined in any order.
+                The actual rendered columns are set as a property on the row definition" -->
+        
+          <!-- Postion Column -->
+          <ng-container matColumnDef="position">
+            <th mat-header-cell *matHeaderCellDef> No. </th>
+            <td mat-cell *matCellDef="let element; let i = index;"> {{i + 1}} </td>
+          </ng-container>
+        
+          <!-- Username Column -->
+          <ng-container matColumnDef="user" >
+            <th mat-header-cell *matHeaderCellDef> Username </th>
+            <td mat-cell *matCellDef="let element"> {{element.user | titlecase}} </td>
+          </ng-container>
+        
+        
+          <!-- Admin Column -->
+          <ng-container matColumnDef="Admin">
+            <th mat-header-cell *matHeaderCellDef> Admin </th>
+            <td mat-cell *matCellDef="let element"> {{element.admin}} </td>
+          </ng-container>
+  
+          <!-- Date Column -->
+          <ng-container matColumnDef="dateCreated">
+            <th mat-header-cell *matHeaderCellDef> Date Created </th>
+            <td mat-cell *matCellDef="let element"> {{element.dateCreated | date:'short'}} </td>
+           
+  
+            <!--Buttons Column-->
+          </ng-container>
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell  *matHeaderCellDef ></th>
+            <td mat-cell *matCellDef="let element; let i = index">
+              <div><button  mat-raised-button color="warn" (click)="openEditDialog(element)"><mat-icon>mode edit</mat-icon>Edit</button></div>
+             <!-- <app-edit-button text= "{{ showEditClient ? 'x' : 'Edit' }}" 
+             (btnClick)="toggleEditClient(i)"></app-edit-button> -->
+             <div><button class="delBut" mat-raised-button color="accent" (click)="openDelDialog(element)">x</button></div>
+            </td>
+          </ng-container>
+        
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+        </table>
+        <!-- <app-edit-client text="Submit"  ></app-edit-client> -->
+        <!-- <app-edit-client text="Submit" (btnClick)="toggleEditClient()" ></app-edit-client> -->
+      

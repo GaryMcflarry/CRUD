@@ -1,0 +1,51 @@
+<div class="mat-elevation-z8">
+    <h1 class="logoTitle">Organization Name (copyright symbol :)</h1>
+</div>
+
+<mat-card class="card">
+  <mat-card-header>
+    <div class="mat-elevation-z8"></div>
+    <h1 class="login">Log In</h1>
+  </mat-card-header>
+    
+        <mat-form-field class="loginUsername">
+          <mat-label>Username</mat-label>
+          <input matInput #Username maxlength="15" name="user" [formControl]="userFormControl"  [errorStateMatcher]="matcher" [(ngModel)]="newUser.username" placeholder="Insert Username...">
+          <button *ngIf="newUser.username" matSuffix mat-icon-button aria-label="Clear" (click)="newUser.username=''">
+            <mat-icon>delete_outline</mat-icon>
+            </button>
+            <mat-error *ngIf="userFormControl.hasError('required')">
+              Username is required
+            </mat-error>
+            <ng-container *ngIf="newUser.username ==''">
+              <mat-hint align="start"class="hints">Don't disclose personal info... </mat-hint>
+            </ng-container>
+          <mat-hint align="end" class="hints">{{Username.value.length}} / 15</mat-hint>
+        </mat-form-field>
+    
+
+      <mat-form-field class="loginPassword">
+        <mat-label>Password</mat-label>
+        <input matInput #password maxlength="15" name="password" [formControl]="passwordFormControl" [(ngModel)]="newUser.password" placeholder="Insert Password...">
+        <button *ngIf="newUser.password" matSuffix mat-icon-button aria-label="Clear" (click)="newUser.password=''">
+          <mat-icon>delete_outline</mat-icon>
+          </button>
+          <mat-error *ngIf="passwordFormControl.hasError('required')">
+            Password is required
+          </mat-error>
+          <ng-container>
+            <mat-hint align="start" class="hints">Keep to yourself... </mat-hint>
+          </ng-container>
+        <mat-hint align="end" class="hints">{{password.value.length}} / 15</mat-hint>
+      </mat-form-field>
+
+
+    <div class="authErrorMessage">
+      {{authFail}}
+    </div>
+
+    <button class="loginBut" (click)="loginUser()" mat-raised-button color="primary" [disabled]="newUser.username === '' || newUser.password ===''">Log In</button>
+
+    <!-- <router-outlet></router-outlet> -->
+
+</mat-card>

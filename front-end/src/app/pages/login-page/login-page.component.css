@@ -1,0 +1,39 @@
+.logoTitle {
+    margin: 10px;
+    font-weight: 100;
+    font-style: oblique;
+    font-size: xx-large;
+    color:rgb(227, 237, 237);
+    text-align: center;
+}
+
+.loginUsername {
+  margin-bottom: 20px;
+}
+
+.loginPassword {
+  margin-bottom: 20px;
+}
+
+  .hints {
+   font-size: small;
+    color: rgb(227, 237, 237);
+  }
+
+  .loginBut {
+    display:flex;
+    justify-content: center;
+  
+  }
+
+.authErrorMessage {
+  color: red;
+  margin-top: 1%;
+  font-size: medium;
+}
+
+.card {
+  margin-top: 35%;
+  color: white;
+  background-color: rgb(44, 44, 44);
+}

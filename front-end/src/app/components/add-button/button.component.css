@@ -1,0 +1,13 @@
+
+.divAddBut {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.addBut{
+    margin-bottom: 5px;
+    margin: 4px;
+    width: 50%;
+}
+
